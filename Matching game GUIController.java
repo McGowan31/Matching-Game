@@ -1,5 +1,6 @@
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 
 public class PleaseProvideControllerClassName {
 
@@ -38,5 +39,41 @@ public class PleaseProvideControllerClassName {
 
     @FXML
     private Button Button9;
+
+    @FXML
+    private Label Cat1;
+
+    @FXML
+    private Label Cat2;
+
+    @FXML
+    private Label Dog1;
+
+    @FXML
+    private Label Dog2;
+
+    @FXML
+    private Label Dragon1;
+
+    @FXML
+    private Label Dragon2;
+
+    @FXML
+    private Label Griffon1;
+
+    @FXML
+    private Label Griffon2;
+
+    @FXML
+    private Label Lion1;
+
+    @FXML
+    private Label Lion2;
+
+    @FXML
+    private Label Shark1;
+
+    @FXML
+    private Label Shark2;
 
 }
