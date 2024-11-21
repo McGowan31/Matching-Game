@@ -12,5 +12,12 @@ public class Driver {
 
         Cards[] testCards = {dragonCard, snakeCard, swanCard, tigerCard, rabbitCard, foxCard};
         Deck testDeck = new Deck(testCards);
+        Cards[] shuffledCards = testDeck.shuffle();
+
+        //displays the result of the random shuffle of Cards objects
+        for(int z =0; z < shuffledCards.length; z++){
+            System.out.println(shuffledCards[z].getDesign());
+        }
+
     }
 }
