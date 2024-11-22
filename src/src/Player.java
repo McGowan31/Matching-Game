@@ -40,7 +40,7 @@ public class Player {
         this.score = score;
     }
 
-    // carc clicked scenario + reset
+    // card clicked scenario + reset
     public void cardClicked() {
         score++; // Increment score for each card clicked
     }
