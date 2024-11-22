@@ -1,9 +1,22 @@
+package com.example.tryagain;
 public class Cards {
-    private String design;
+    private final String value;
+    private boolean isFaceUp;
 
-    public Cards(String design){
-        this.design = design;
+    public Cards(String value) {
+        this.value = value;
+        this.isFaceUp = false;
     }
 
-    public String getDesign(){return design;}
+    public String getValue() {
+        return value;
+    }
+
+    public boolean isFaceUp() {
+        return isFaceUp;
+    }
+
+    public void flip() {
+        isFaceUp = !isFaceUp;
+    }
 }
