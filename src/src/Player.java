@@ -42,7 +42,7 @@ public class Player {
 
     // card clicked scenario + reset
     public void cardClicked() {
-        score++; // Increment score for each card clicked
+        score++; 
     }
 
     public void reset() {
