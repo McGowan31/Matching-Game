@@ -9,6 +9,7 @@
    // compare user score with txt file high scores. for loop I think?
    // if user score higher than top 10, add user high score to top 10 high scores
    // in reality, user score list will be top 11, and 11 will be cleared frequently
+   // only top 10 will be displayed as is the norm
 
 
 public class Player {
