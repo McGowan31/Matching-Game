@@ -1,4 +1,3 @@
-//#fate franks
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 
@@ -10,11 +9,12 @@
    // compare user score with txt file high scores. for loop I think?
    // if user score higher than top 10, add user high score to top 10 high scores
    // in reality, user score list will be top 11, and 11 will be cleared frequently
-    
+
 
 public class Player {
     private String name;
     private int score;
+    private int matchesfound;
 
     //consructor
     public Player(String name) {
@@ -30,6 +30,10 @@ public class Player {
     public int getScore() {
         return score;
     }
+    
+    public int getMatchesFound(){
+        return matchesfound;
+    }
 
     // setters
     public void setName(String name) {
@@ -39,14 +43,18 @@ public class Player {
     public void setScore(int score) {
         this.score = score;
     }
-
-    // card clicked scenario + reset
-    public void cardClicked() {
-        score++; 
+    
+    public void setMatchesfound(int matchesfound){
+        this.matchesfound=matchesfound;
     }
+
+    // carc clicked scenario + reset
+    public void cardClicked() {
+        score++; // Increment score for each card clicked
+    }
+    
 
     public void reset() {
         score = 0;
     }
 }
-
