@@ -9,7 +9,7 @@ import javafx.util.Duration;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class MatchingGame {
+public class MatchingGameController {
     private int currentFaceUp = 0;
     private int totalFaceUp = 0;
     private int totalClicks = 0;
