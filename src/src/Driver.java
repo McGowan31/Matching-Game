@@ -1,22 +1,23 @@
-package com.example.demo;
+package com.example.cardmatchinggame;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Driver extends Application{
+import java.io.IOException;
+
+public class Driver extends Application {
     @Override
-    public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("MatchingGame.fxml"));
-        Scene scene = new Scene(root);
-        stage.setTitle("Title");
+    public void start(Stage stage) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Driver.class.getResource("cardmatchinggamegui.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 995, 742); // Adjusted size for the layout
+        stage.setTitle("Card Matching Game");
         stage.setScene(scene);
         stage.show();
     }
 
     public static void main(String[] args) {
-        launch(args);
+        launch();
     }
 }
