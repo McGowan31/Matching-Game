@@ -12,7 +12,6 @@ import java.util.Objects;
 public class MatchingGameController {
     private int currentFaceUp = 0;
     private int totalFaceUp = 0;
-    private int totalClicks = 0;
     private Cards currCard1;
     private Cards currCard2;
     private Button currButton1;
@@ -31,6 +30,8 @@ public class MatchingGameController {
 
     @FXML
     private ArrayList<Button> buttons = new ArrayList<>();
+
+    private Player player;
 
     @FXML
     private Button button1;
@@ -59,6 +60,9 @@ public class MatchingGameController {
 
     @FXML
     public void initialize() {
+
+        player = new Player("Player 1");
+
         buttons.add(button1);
         buttons.add(button2);
         buttons.add(button3);
@@ -102,7 +106,7 @@ public class MatchingGameController {
 
     private void turnCard(Cards c, Button b) {
         ++currentFaceUp;
-        ++totalClicks;
+        player.cardClicked();
         b.setText(c.getValue());
     }
 
@@ -115,6 +119,7 @@ public class MatchingGameController {
 
             if (totalFaceUp == 12) {
                 System.out.println("You win!");
+                System.out.printf("You found all matches in %d clicks.%n", player.getScore());
                 System.exit(0);
             }
         } else {
