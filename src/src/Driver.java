@@ -1,23 +1,22 @@
+package com.example.demo;
 
-public class Driver {
-    public static void main(String[] args){
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-        //testing
-        Cards dragonCard = new Cards("Dragon");
-        Cards snakeCard = new Cards("Snake");
-        Cards swanCard = new Cards("Swan");
-        Cards tigerCard = new Cards("Tiger");
-        Cards rabbitCard = new Cards("Rabbit");
-        Cards foxCard = new Cards("Fox");
+public class Driver extends Application{
+    @Override
+    public void start(Stage stage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("MatchingGame.fxml"));
+        Scene scene = new Scene(root);
+        stage.setTitle("Title");
+        stage.setScene(scene);
+        stage.show();
+    }
 
-        Cards[] testCards = {dragonCard, snakeCard, swanCard, tigerCard, rabbitCard, foxCard};
-        Deck testDeck = new Deck(testCards);
-        Cards[] shuffledCards = testDeck.shuffle();
-
-        //displays the result of the random shuffle of Cards objects
-        for(int z =0; z < shuffledCards.length; z++){
-            System.out.println(shuffledCards[z].getDesign());
-        }
-
+    public static void main(String[] args) {
+        launch(args);
     }
 }
