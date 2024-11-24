@@ -1,3 +1,11 @@
+/**
+ * PURPOSE: A tile-based game where players flip over 2 face down cards in hopes of finding a pair.
+ *          In the scenario that a pair is found, the respective pair stays face up and is unable to be re-selected.
+ *          The ultimate goal of the game is to find all pairs in the shortest amount of guesses (clicks).
+ * GROUP: group 9
+ * NAMES: Connor Maxwell, Jack Mcgowan, Katelyn Touzeau, T Franks
+ * DATE: 11/23/24
+ */
 package com.example.cardmatchinggame;
 
 import javafx.application.Application;
@@ -21,3 +29,5 @@ public class Driver extends Application {
         launch();
     }
 }
+
+
