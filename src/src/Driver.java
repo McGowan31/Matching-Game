@@ -18,7 +18,7 @@ import java.io.IOException;
 public class Driver extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Driver.class.getResource("cardmatchinggamegui.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Driver.class.getResource("MatchingGame.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 995, 742); // Adjusted size for the layout
         stage.setTitle("Card Matching Game");
         stage.setScene(scene);
