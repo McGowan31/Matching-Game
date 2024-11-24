@@ -1,23 +1,18 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+/*/
+Player is a very basic class designed to handle very basic things such as incrementing the click count 
+when the player clicks a card in the form of a score. Player has features not fully implemented in the final product due
+to time constraints.
+ */
 
-    //notes to self
-   //record high score by lowest number of clicks first.
-   // handle high score by method of txt file.
-   // first check if txt file exists.
-   // if yes, compare user end result score to txt file top 10.
-   // compare user score with txt file high scores. for loop I think?
-   // if user score higher than top 10, add user high score to top 10 high scores
-   // in reality, user score list will be top 11, and 11 will be cleared frequently
-   // only top 10 will be displayed as is the norm
+package com.example.cardmatchinggame;
 
 
 public class Player {
-    private String name;
-    private int score;
-    private int matchesfound;
+    private String name; //player name
+    private int score;  //player score
+    private int matchesfound;  //player matches
 
-    //consructor
+    //constructor
     public Player(String name) {
         this.name = name;
         this.score = 0;
@@ -40,7 +35,7 @@ public class Player {
     public void setName(String name) {
         this.name = name;
     }
-
+    
     public void setScore(int score) {
         this.score = score;
     }
@@ -49,13 +44,13 @@ public class Player {
         this.matchesfound=matchesfound;
     }
 
-    // carc clicked scenario + reset
+    // card clicked scenario + reset
     public void cardClicked() {
         score++; // Increment score for each card clicked
     }
     
 
-    public void reset() {
+    public void reset() { //place for resetting score for bug testing
         score = 0;
     }
 }
