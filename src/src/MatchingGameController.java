@@ -10,9 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.util.Duration;
-
-
-
+import javafx.scene.image.ImageView;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -27,12 +25,12 @@ public class MatchingGameController {
 
     private final Cards dragonCard = new Cards("Dragon");       //declare the Cards instances to be used
     private final Cards snakeCard = new Cards("Snake");
-    private final Cards swanCard = new Cards("Swan");
+    private final Cards pigCard = new Cards("Pig");
     private final Cards tigerCard = new Cards("Tiger");
     private final Cards rabbitCard = new Cards("Rabbit");
-    private final Cards foxCard = new Cards("Fox");
+    private final Cards oxCard = new Cards("Ox");
 
-    private final Cards[] testCards = {dragonCard, snakeCard, swanCard, tigerCard, rabbitCard, foxCard};
+    private final Cards[] testCards = {dragonCard, snakeCard, pigCard, tigerCard, rabbitCard, oxCard};
     private final Deck testDeck = new Deck(testCards);          //create a deck with the selected Cards
     private final Cards[] shuffledCards = testDeck.shuffle();   //get the shuffledCards to be used
 
@@ -132,6 +130,45 @@ public class MatchingGameController {
         ++currentFaceUp;
         player.cardClicked();
         b.setText(c.getValue());
+
+        switch (c.getValue()){
+            case "Dragon":
+                ImageView dv = new ImageView(getClass().getResource("dragon.png").toExternalForm());
+                dv.setFitHeight(200);
+                dv.setFitWidth(144);
+                b.setGraphic(dv);
+                break;
+            case "Snake":
+                ImageView sv = new ImageView(getClass().getResource("snake.png").toExternalForm());
+                sv.setFitHeight(200);
+                sv.setFitWidth(144);
+                b.setGraphic(sv);
+                break;
+            case "Pig":
+                ImageView pv = new ImageView(getClass().getResource("pig.png").toExternalForm());
+                pv.setFitHeight(200);
+                pv.setFitWidth(144);
+                b.setGraphic(pv);
+                break;
+            case "Tiger":
+                ImageView tv = new ImageView(getClass().getResource("tiger.png").toExternalForm());
+                tv.setFitHeight(200);
+                tv.setFitWidth(144);
+                b.setGraphic(tv);
+                break;
+            case "Rabbit":
+                ImageView rv = new ImageView(getClass().getResource("rabbit.png").toExternalForm());
+                rv.setFitHeight(200);
+                rv.setFitWidth(144);
+                b.setGraphic(rv);
+                break;
+            case "Ox":
+                ImageView ov = new ImageView(getClass().getResource("ox.png").toExternalForm());
+                ov.setFitHeight(200);
+                ov.setFitWidth(144);
+                b.setGraphic(ov);
+                break;
+        }
     }
 
     /**
@@ -149,13 +186,22 @@ public class MatchingGameController {
             b1.setDisable(true);                               //disable both cards from being selected again
             b2.setDisable(true);
 
-            if (totalFaceUp == 12) {                           //check to see if this was the last pair remaining
+            if (totalFaceUp == 12) {
+                System.out.print("You have won in " + player.getScore()+ " clicks!"); //check to see if this was the last pair remaining
                 System.exit(0);
             }
         } else {
             currentFaceUp = 0;  //if the cards do not match, reset the current guess count to 0 and flip them back over
             b1.setText("CARD");
             b2.setText("CARD");
+            ImageView iv1 = new ImageView(getClass().getResource("CardBack.png").toExternalForm());
+            iv1.setFitHeight(200);
+            iv1.setFitWidth(144);
+            ImageView iv2 = new ImageView(getClass().getResource("CardBack.png").toExternalForm());
+            iv2.setFitHeight(200);
+            iv2.setFitWidth(144);
+            b1.setGraphic(iv1);
+            b2.setGraphic(iv2);
         }
     }
 
