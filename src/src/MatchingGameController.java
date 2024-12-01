@@ -11,7 +11,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.util.Duration;
 
-import java.util.Scanner;
+
+
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -70,45 +71,6 @@ public class MatchingGameController {
      */
     @FXML
     public void initialize() {
-        Scanner scanner = new Scanner(System.in);  // asks user if they want to play
-        System.out.print("Would you like to play a matching game? (yes/no):");
-        String askToPlay = scanner.nextLine().trim().toLowerCase();
-
-        if (!askToPlay.equals("yes")) {
-            System.out.println("Game aborted. Goodbye!");
-            System.exit(0); // exit the program if user doesn't want to play
-        }
-        System.out.print("Do you need an explanation of the rules? (yes/no):");//asks user if they want the rules
-        String askForRules = scanner.nextLine().trim().toLowerCase();
-
-        if (askForRules.equals("yes")) { //rules explanation
-            System.out.println("Here's how it works.");
-            System.out.println("You will be given a selection of 12 cards, 6 pairs, named as follows:");
-            System.out.println("Dragon");
-            System.out.println("Snake");
-            System.out.println("Swan");
-            System.out.println("Tiger");
-            System.out.println("Rabbit");
-            System.out.println("Fox");
-            System.out.println("You will be given these cards facing down. When you click on a card, it will reveal " +
-                    "What that card is. As soon as you do this, try and guess where the matching card " +
-                    "is. If \n you are " +
-                    "correct, that card will be saved. If you are incorrect, " +
-                    "the card will flip back over and you will " +
-                    "have to guess from the beginning. Try and match them all in as \nlittle clicks as possible!");
-            System.out.print("With that being said, would you still like to play?"); //asks the user one final time
-
-            String askToBegin = scanner.nextLine().trim().toLowerCase();
-
-            if (!askToBegin.equals("yes")) {
-                System.out.println("Game aborted. Goodbye!");
-                System.exit(0); // exit the program if user doesn't want to play
-            }
-
-        }
-
-
-
         player = new Player("Player 1");    //declare a Player instance for the current game; keeps track of the score
 
         buttons.add(button1);
@@ -188,8 +150,6 @@ public class MatchingGameController {
             b2.setDisable(true);
 
             if (totalFaceUp == 12) {                           //check to see if this was the last pair remaining
-                System.out.println("You win!");
-                System.out.printf("You found all matches in %d clicks.%n", player.getScore());
                 System.exit(0);
             }
         } else {
@@ -198,4 +158,6 @@ public class MatchingGameController {
             b2.setText("CARD");
         }
     }
+
+
 }
