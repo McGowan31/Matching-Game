@@ -16,18 +16,24 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Driver extends Application {
+    private static Stage primaryStage;
+
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Driver.class.getResource("MatchingGame.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 995, 742); // Adjusted size for the layout
+        FXMLLoader loader = new FXMLLoader(Driver.class.getResource("MainMenu.fxml")); // Main menu
+        Scene scene = new Scene(loader.load(), 995, 742);
         stage.setTitle("Card Matching Game");
         stage.setScene(scene);
         stage.show();
+    }
+
+    public static void switchScene(String fxml) throws Exception {
+        FXMLLoader loader = new FXMLLoader(Driver.class.getResource(fxml));
+        Scene scene = new Scene(loader.load());
+        primaryStage.setScene(scene);
     }
 
     public static void main(String[] args) {
         launch();
     }
 }
-
-
