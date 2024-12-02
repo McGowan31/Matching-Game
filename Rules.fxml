@@ -1,18 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="742.0" prefWidth="995.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cardmatchinggame.RulesController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="742.0" prefWidth="995.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.RulesController">
     <children>
-        <VBox layoutX="50.0" layoutY="50.0" spacing="10.0" prefWidth="900.0">
+        <ImageView fitHeight="742.0" fitWidth="995.0" pickOnBounds="true">
+            <image>
+                <Image url="@cardbackground.png" />
+            </image>
+        </ImageView>
+        <VBox alignment="CENTER" layoutX="50.0" layoutY="50.0" prefHeight="591.0" prefWidth="900.0" spacing="10.0">
             <children>
-                <Label text="1. Match pairs of cards by flipping them." />
-                <Label text="2. Only two cards can be flipped at a time." />
-                <Label text="3. If cards match, they remain face-up." />
-                <Label text="4. The game ends when all pairs are matched." />
-                <Label text="5. Try to find all pairs in the fewest clicks possible!" />
+                <Label alignment="CENTER" contentDisplay="CENTER" text="Rules" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="50.0" />
+                    </font>
+                </Label>
+                <Label text="1. Match pairs of cards by flipping them.">
+                    <font>
+                        <Font size="30.0" />
+                    </font></Label>
+                <Label text="2. Only two cards can be flipped at a time.">
+                    <font>
+                        <Font size="30.0" />
+                    </font></Label>
+                <Label text="3. If cards match, they remain face-up.">
+                    <font>
+                        <Font size="30.0" />
+                    </font></Label>
+                <Label text="4. The game ends when all pairs are matched.">
+                    <font>
+                        <Font size="30.0" />
+                    </font></Label>
+                <Label text="5. Try to find all pairs in the fewest clicks possible!">
+                    <font>
+                        <Font size="30.0" />
+                    </font></Label>
             </children>
         </VBox>
         <Button fx:id="backButton" layoutX="400.0" layoutY="650.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Back" />
